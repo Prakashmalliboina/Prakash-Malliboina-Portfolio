@@ -6,7 +6,6 @@
     <title>Prakash Malliboina | Full Stack Portfolio</title>
     <!-- Boxicons (used in original CSS) -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <!-- Removed external CSS link: <link rel="stylesheet" href="style.css" /> -->
     <!-- Scroll Reveal Library -->
     <script src="https://unpkg.com/scrollreveal"></script>
     
@@ -182,10 +181,40 @@
             width: 100%;
         }
 
+        /* NEW CSS FOR SECONDARY BUTTON STYLE (e.g., in About section) */
+        .btn-secondary {
+            background: transparent;
+            color: var(--main-color);
+        }
+
+        .btn-secondary:hover {
+            color: var(--bg-color);
+        }
+
+        .btn-secondary::before {
+            background: var(--main-color);
+        }
+        /* END NEW CSS */
+
+        /* Fix for 'View My Journey' button in About section */
+        .about .btn-box.btns {
+            display: block;
+            text-align: center;
+            width: 100%;
+            height: auto;
+            margin-top: 2rem; 
+        }
+        
+        .about .btn-box.btns .btn {
+            width: 22rem; /* Ensures the text fits on one line */
+            margin: 0;
+        }
+
         .home-sci {
             position: absolute;
             bottom: 4rem;
-            width: 170px;
+            /* ADJUSTED WIDTH TO REDUCE SPACE BETWEEN ICONS */
+            width: 100px; 
             display: flex;
             justify-content: space-between;
         }
@@ -227,6 +256,7 @@
             width: 100%;
         }
 
+        /* Removed .home-imgHover CSS to prevent the blue overlay on hover */
         .home-imgHover {
             position: absolute;
             top: 0;
@@ -234,12 +264,13 @@
             width: 45%;
             height: 100%;
             background: transparent;
-            transition: 3s;
+            /* Removed transition: 3s; */
         }
 
         .home-imgHover:hover {
-            background: var(--main-color);
-            opacity: 0.1;
+            /* Removed blue hover effect */
+            background: transparent; 
+            opacity: 1; 
         }
 
         .about {
@@ -312,14 +343,7 @@
             margin: 2rem 0 3rem;
         }
 
-        .btn-box .btns {
-            display: inline-block;
-            width: 15em;
-        }
-
-        .btn-box .btns a::before {
-            background-color: var(--second-bg-color);
-        }
+        /* REMOVED: .btn-box .btns { display: inline-block; width: 15em; } */
 
         .education {
             display: flex;
@@ -593,6 +617,9 @@
         }
 
         @media (max-width: 768px) {
+            .about .btn-box.btns .btn {
+                width: 100%;
+            }
             #menu-icon {
                 display: block;
             }
@@ -669,19 +696,20 @@
             <!-- Added compelling content to the empty paragraph -->
             <p>I am a passionate and results-driven Computer Science Engineering graduate with hands-on experience in full-stack Java development, database management (MySQL), and cloud deployment using AWS. I specialize in building secure, scalable applications and thrive on solving complex technical challenges.</p>
             <div class="btn-box">
+                <!-- UPDATED: Hire Me redirects to Contact section -->
                 <a href="#contact" class="btn">Hire Me</a>
+                <!-- UPDATED: Let's Talk redirects to Contact section -->
                 <a href="#contact" class="btn">Let's Talk</a>
             </div>
         </div>
         <div class="home-sci">
-            <!-- UPDATED LINKEDIN LINK -->
+            <!-- UPDATED: LinkedIn is the first link -->
             <a href="https://www.linkedin.com/in/prakash-malliboina/" target="_blank"><i class='bx bxl-linkedin'></i></a>
-            <!-- UPDATED GITHUB LINK -->
+            <!-- UPDATED: GitHub is the second link -->
             <a href="https://github.com/Prakashmalliboina" target="_blank"><i class='bx bxl-github'></i></a>
-            <!-- Twitter link remains as a placeholder -->
-            <a href="#"><i class='bx bxl-twitter'></i></a>
         </div>
-        <div class="home-imgHover"></div>
+        <!-- Removed blue background effect. Keeping the div for structural purposes if needed later. -->
+        <div class="home-imgHover"></div> 
     </section>
 
     <!-- about section design -->
@@ -700,7 +728,8 @@
             <p>My core skills span the full development lifecycle, from designing robust backend architecture to delivering polished frontend user experiences. I thrive in collaborative environments focused on achieving significant, impactful outcomes.</p>
         </div>
         <div class="btn-box btns">
-            <a href="#education" class="btn">View My Journey</a>
+            <!-- ADDED btn-secondary CLASS FOR TRANSPARENT STYLE -->
+            <a href="#education" class="btn btn-secondary">View My Journey</a>
         </div>
 
     </section>
